@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Empty Page</title>
+    </head>
+    <body>
+        {% if group %}
+            <h2>Exercises for Group: {{ group }}</h2>
+            {% if exercises %}
+                <ul>
+                    {% for exercise in exercises %}
+                        <li>{{ exercise }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Brak dostępnych ćwiczeń dla tej grupy.</p>
+            {% endif %}
+        {% endif %}
+        <script>
+            window.location.href = "/console";
+        </script>
+    </body>
+</html>

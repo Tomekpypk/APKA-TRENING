@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tomaszowa apka treningowa</title>
+    </head>
+    <body style="background-color: lightGrey; font-family:Arial">
+    
+    <h1>Witaj w Twojej własnej apce treningowej!</h1>
+    <div style="background-color: white; padding:10px; box-shadow: 3px 3px grey; margin-bottom: 10px;">
+        <strong><h2>TRENING</h2></strong>
+        <p>Wybierz swoją grupę mięśniową korzystając z konsoli! Nie zawiedź Arnolda!</p>
+        <br><br>
+        <p><img src="https://www.pap.pl/sites/default/files/styles/main_image/public/202309/pap_20220928_26W.jpg?h=2651511a&itok=NGB1cTVB" width="250" height="150"></p>
+        <form method="POST" action="/">
+            <label for="input">Wybierz grupę mięśniową:</label>
+            <select name="input" id="input">
+                <option value="klatka">Klatka piersiowa</option>
+                <option value="barki">Barki</option>
+                <option value="nogi">Nogi</option>
+                <option value="biceps">Biceps</option>
+                <option value="triceps">Triceps</option>
+                <option value="plecy">Plecy</option>
+            </select>
+            <button type="submit">Zatwierdź</button>
+        </form>
+        
+    </div>
+    
+    <div style="background-color: white; padding:10px; box-shadow: 3px 3px grey; margin-bottom: 10px;">
+        {% if group %}
+            <h2>Exercises for Group: {{ group }}</h2>
+            <ul>
+                {% for exercise in exercises %}
+                    <li>{{ exercise }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    </body>
+</html>

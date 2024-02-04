@@ -1,0 +1,1 @@
+Słownik ćwiczeń- wstępny projekt. 
